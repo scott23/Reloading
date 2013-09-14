@@ -3,7 +3,11 @@
         app = global.app = global.app || {};
 
     document.addEventListener("deviceready", function () {
-        app.application = new kendo.mobile.Application(document.body, { layout: "tabstrip-layout" });
+        app.application = new kendo.mobile.Application(document.body, { 
+            layout: "tabstrip-layout",
+        	transition:'zoom'
+        });
+    
     }, false);
 
     app.changeSkin = function (e) {
@@ -18,4 +22,15 @@
 
         app.application.skin(mobileSkin);
     };
+    
 })(window)
+
+
+    function compute() {
+          var a = $('#a').val();
+          var b = $('#b').val();
+          var total = a * b;
+          $('#total').val(total);
+        }
+
+        $('#a, #b').keyup(compute);
