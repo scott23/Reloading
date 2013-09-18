@@ -19,14 +19,14 @@ function onDeviceReady() {
     var finalTotal = (total.toFixed(3));
 
     var rounds = $('#rounds').val();
-    $('#roundsPrice').val(rounds * finalTotal);
+    $('#roundsPrice').val(finalTotal * rounds);
     $('#onePrice').val(1 * finalTotal);
     $('#50Price').val(50 * finalTotal);
     $('#100Price').val(100 * finalTotal);
     $('#500Price').val(500 * finalTotal);
     $('#1000Price').val(1000 * finalTotal);
 
-    console.log(caseTotal, primerTotal, powderTotal, bulletTotal, rounds, finalTotal);
+    console.log(caseTotal, primerTotal, powderTotal, bulletTotal, total, finalTotal);
   }
   $('.field').keyup(compute);
 }
