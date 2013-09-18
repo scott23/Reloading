@@ -28,5 +28,6 @@ function onDeviceReady() {
 
     console.log(caseTotal, primerTotal, powderTotal, bulletTotal, total, finalTotal);
   }
-  $('.field').keyup(compute);
+  //$('.field').keyup(compute);
+    $('#submit').on('click', compute);
 }
