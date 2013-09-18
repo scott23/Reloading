@@ -7,8 +7,7 @@ function onDeviceReady() {
   app.application = new kendo.mobile.Application(document.body, {
     layout: "tabstrip-layout",
     skin: "flat"
-    /*transition:'zoom'*/
-    });
+  });
 
   function compute() {
     var caseTotal = $('#casePrice').val() / $('#caseQty').val() || 0;
