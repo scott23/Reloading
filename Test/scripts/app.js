@@ -16,18 +16,16 @@ function onDeviceReady() {
     var powderTotal = $('#powderPrice').val() / ($('#powderQty').val() * 7000 / $('#grainsQty').val()) || 0;
     var bulletTotal = $('#bulletPrice').val() / $('#bulletQty').val() || 0;
     var total = (caseTotal + primerTotal + powderTotal + bulletTotal);
-    var finalTotal = (total.toFixed(3));
 
     var rounds = $('#rounds').val();
-    $('#roundsPrice').val(finalTotal * rounds);
-    $('#onePrice').val(1 * finalTotal);
-    $('#50Price').val(50 * finalTotal);
-    $('#100Price').val(100 * finalTotal);
-    $('#500Price').val(500 * finalTotal);
-    $('#1000Price').val(1000 * finalTotal);
+    $('#roundsPrice').val((total * rounds).toFixed(3));
+    $('#onePrice').val((1 * total).toFixed(3));
+    $('#50Price').val((50 * total).toFixed(3));
+    $('#100Price').val((100 * total).toFixed(3));
+    $('#500Price').val((500 * total).toFixed(3));
+    $('#1000Price').val((1000 * total).toFixed(3));
 
-    console.log(caseTotal, primerTotal, powderTotal, bulletTotal, total, finalTotal);
+    console.log(caseTotal, primerTotal, powderTotal, bulletTotal, total);
   }
-  //$('.field').keyup(compute);
-    $('#submit').on('click', compute);
+  $('.field').keyup(compute);
 }
