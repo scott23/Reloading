@@ -16,17 +16,16 @@
   </head>
   <body>
   <!--Home-->
-  <div id="tabstrip-home" data-role="view" data-title="Home">
-
-      <div data-role="content" class="view-content">
-          <h1>Welcome!</h1>
-          <p>Icenium&trade; enables you to build cross-platform device applications regardless of your development platform by combining the convenience of a local development toolset with the power and flexibility of the cloud.</p>
-          <div class="img"></div>
-      </div>
+  <div id="tabstrip-home" data-role="view" data-layout="default" data-title="Home">
+    <div data-role="content" class="view-content">
+      <h1>Welcome!</h1>
+      <p>Icenium&trade; enables you to build cross-platform device applications regardless of your development platform by combining the convenience of a local development toolset with the power and flexibility of the cloud.</p>
+      <div class="img"></div>
+    </div>
   </div>
 
   <!--Calculator-->
-  <div id="calculator" data-role="view" data-layout="layout" data-title="Calculator" data-use-native-scrolling="true">
+  <div id="calculator" data-role="view" data-layout="layout" data-title="Calculator">
   	<h2>Reloading Cost Calculator</h2>
   		<form id="calculator">
         <table>
@@ -76,7 +75,7 @@
           </thead>
           <tbody>
             <tr>
-                <td><input type="number" value="" id="rounds" class="field" /></td>
+              <td><input type="number" value="" id="rounds" class="field" /></td>
               <td><input type="number" value="" id="roundsPrice" readonly /></td>
             </tr>
             <tr>
@@ -104,19 +103,65 @@
       </form>
     </div>
 
+
+    <!--Layout Lead Hardness-->
+    <!-- <div data-role="view" data-title="Lead Hardness" id="lead_hardness" data-layout="layout">
+      <ul data-role="listview" data-source="foo" data-template="foo-template">
+      </ul>
+    </div> -->
+
+
+<div data-role="view" id="grouped" data-init="mobileListViewDataBindInitGrouped" data-transition="" data-title="ListView" data-layout="layout">
+     <ul id="grouped-listview"></ul>
+</div>
+
+<script type="text/javascript">
+var groupedData = [
+        {name: "Sashimi salad", letter: "S" },
+        {name: "Chirashi sushi", letter: "C" },
+        {name: "Seaweed salad", letter: "S" },
+        {name: "Edamame", letter: "E" },
+        {name: "Miso soup", letter: "M" },
+        {name: "Maguro", letter: "M" },
+        {name: "Shake", letter: "S" },
+        {name: "Shiromi", letter: "S" },
+        {name: "Tekka maki", letter: "T" },
+        {name: "Hosomaki Mix", letter: "H" },
+        {name: "California rolls", letter: "C" },
+        {name: "Seattle rolls", letter: "S" },
+        {name: "Spicy Tuna rolls", letter: "S" },
+        {name: "Ebi rolls", letter: "E" },
+        {name: "Chicken Teriyaki", letter: "C" },
+        {name: "Salmon Teriyaki", letter: "S" },
+        {name: "Gohan", letter: "G" },
+        {name: "Tori Katsu", letter: "T" },
+        {name: "Yaki Udon", letter: "Y" }
+    ];
+
+    function mobileListViewDataBindInitGrouped() {
+        $("#grouped-listview").kendoMobileListView({
+            dataSource: kendo.data.DataSource.create({data: groupedData, group: "letter"}),
+            template: "${name}",
+            fixedHeaders: true
+        });
+    }
+</script>
+
+
+
     <!--Layout Home-->
-    <div data-role="layout" data-id="tabstrip-layout" >
+    <div data-role="layout" data-id="default" >
         <!--Header-->
         <div data-role="footer">
     			 <div data-role="tabstrip">
                 <a href="#tabstrip-home" data-icon="home">Home</a>
                 <a href="#calculator" data-icon="calculator">Calculator</a>
-                <a href="#bullet" data-icon="bullet">Lead Hardness</a>
+                <a href="#grouped" data-icon="bullet">Lead Hardness</a>
             </div>
         </div>
     </div>
 
-    <!--Layout-->
+    <!--Layout Calculator-->
     <div data-role="layout" data-id="layout" >
         <!--Header-->
         <div data-role="header">
@@ -130,7 +175,7 @@
            <div data-role="tabstrip">
               <a href="#tabstrip-home" data-icon="home">Home</a>
               <a href="#calculator" data-icon="calculator">Calculator</a>
-              <a href="#bullet" data-icon="bullet">Lead Hardness</a>
+              <a href="#grouped" data-icon="bullet">Lead Hardness</a>
             </div>
         </div>
     </div>
