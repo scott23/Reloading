@@ -202,3 +202,11 @@ input[type=number] {
   font: 1.5em/0.7em "outgunnedregular";
   content: '_';
 }
+
+.km-flat .km-tabstrip > .km-button {
+  border-right: 1px solid #eee;
+}
+
+.km-tabstrip > .km-button:last-child {
+  border-right: none;
+}
