@@ -16,6 +16,9 @@ function onDeviceReady() {
     var bulletTotal = $('#bulletPrice').val() / $('#bulletQty').val() || 0;
     var total = (caseTotal + primerTotal + powderTotal + bulletTotal);
 
+    var roundsPowder = ($('#powderQty').val() * 7000) / $('#grainsQty').val();
+    $('#roundsPowder').val(roundsPowder.toFixed(0));
+
     var rounds = $('#rounds').val();
     $('#roundsPrice').val((total * rounds).toFixed(3));
     $('#onePrice').val((1 * total).toFixed(3));
